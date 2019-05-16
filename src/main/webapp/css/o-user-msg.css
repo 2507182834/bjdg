@@ -1,0 +1,63 @@
+.box{
+    width: 60%;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    padding: 10px;
+}
+
+.head-box{
+
+}
+.buttom-box{
+    min-height: 550px;
+}
+.head-box-left{
+    width: min-content;
+    display: inline-block;
+    margin-left: 70px;
+}
+.head-box-right{
+    display: inline-block;
+    float: right;
+    width: 900px;
+    margin-top: 40px;
+}
+.user-img{
+    width: 78px;
+    height: 78px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-top: 58px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+.user-name{
+    width: 100%;
+    text-align: center;
+    color: #666666;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.div-button{
+    display: inline-block;
+    float: right;
+    margin-top: 100px;
+    margin-right: 10px;
+    color: #0094ff;
+    cursor: default;
+}
+.title-box{
+    margin: 60px;
+    margin-bottom: 0;
+    font-size: 16px;
+    border-bottom: 2px #DDDDDD solid;
+}
+.no-unRead-msg{
+    font-size: 40px;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    line-height: 350%;
+    color: #AAAAAA;
+}

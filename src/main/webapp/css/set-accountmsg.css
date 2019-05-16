@@ -1,0 +1,53 @@
+span{
+    font-size: 16px;
+}
+.box{
+    background-color: #fffff0;
+    height: 600px;
+}
+.content-box{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
+    height: 400px;
+}
+.editor-content-box{
+    display: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 125px;
+    height: 400px;
+}
+.set-box{
+    margin-top: 30px;
+}
+.set-span{
+    font-size: 16px;
+    width: 120px;
+    display: inline-block;
+}
+.set-input{
+    width: 260px;
+    height: 30px;
+}
+.submit-button{
+    width: 75px;
+    float: right;
+    margin-right: 75px;
+    height: 30px;
+    background: #0099ff;
+    border: 0px;
+    border-radius: 5px;
+}
+.edit-img{
+    width: 20px;
+    float: right;
+}
+
+.verification-img{
+    height: 25px;
+    border: 1px #999999 solid;
+    width: 60px;
+}

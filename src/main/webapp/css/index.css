@@ -1,0 +1,265 @@
+.carousel-control.left {
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .0001) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .0001) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .0001)));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .1) 0, rgba(0, 0, 0, .0001) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .0001) 0, rgba(0, 0, 0, .1) 100%);
+    background-image: -o-linear-gradient(left, rgba(0, 0, 0, .0001) 0, rgba(0, 0, 0, .5) 100%);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, .0001)), to(rgba(0, 0, 0, .5)));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .0001) 0, rgba(0, 0, 0, .1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+    background-repeat: repeat-x;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0);
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.head_navigation {
+    height: 60px;
+    background: #000;
+}
+
+.head_navigation > ul > div {
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+.head_navigation > ul {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 1px 0 1px 0;
+}
+
+.head_navigation > ul > div > li {
+    height: 100%;
+    float: left;
+    display: inline;
+    color: #fff;
+    width: 160px;
+    font-size: 23px;
+    line-height: 60px;
+    margin-left: 20px;
+}
+
+.head_navigation > ul > div > li > a {
+    color: #fff;
+    outline: 0;
+    text-decoration: none;
+}
+
+.head_navigation > ul > div > li:hover {
+    background: #fff;
+}
+
+.head_navigation > ul > div > .active {
+    background: #fff;
+}
+
+.head_navigation > ul > div > li:hover > a {
+    color: #000;
+}
+
+.head_navigation > ul > div > .active > a {
+    color: #000;
+}
+
+.mycarousel {
+    margin-top: 10px;
+}
+
+.main_dispaly {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login_button, .user_info {
+    width: 60%;
+    height: 30px;
+    margin: auto;
+    line-height: 30px;
+}
+
+.login_button > div, .user_info > div {
+    width: 160px;
+    float: right;
+}
+
+.login_button > div > ul > li, .user_info > div > ul > li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.login_button > div > ul > li > a, .user_info > div > ul > li > a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.login_button > div > ul > li > a:hover, .user_info > div > ul > li > a:hover {
+    text-decoration: none;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 97%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.user-dropdown-menu {
+    position: absolute;
+    top: 97%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 0px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.user-dropdown {
+    height: 28px;
+    margin-top: 1px;
+    text-align: center;
+}
+
+.wrap {
+    width: 100%;
+    min-width: 1190px;
+    background: white;
+    margin: 0 auto 0 auto;
+}
+
+.header_logo_content {
+    width: 1190px;
+    margin: 0 auto 0 auto;
+}
+
+.header_logo_content > a {
+    display: inline-block;
+    width: 281px;
+    height: 61px;
+    margin: 20px 30px 20px 30px;
+}
+
+.header_logo_content > span {
+    font-size: 18px;
+    margin-left: 440px;
+}
+
+.head_navigation {
+    height: 60px;
+    background: #000;
+}
+
+.head_navigation > ul > div {
+    height: 100%;
+    margin: auto;
+    display: inline-block;
+}
+
+.head_navigation > ul {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 1px 0 1px 0;
+}
+
+.head_navigation > ul > div > li {
+    height: 100%;
+    float: left;
+    display: inline;
+    color: #fff;
+    width: 160px;
+    font-size: 23px;
+    line-height: 60px;
+    margin-left: 20px;
+}
+
+.head_navigation > ul > div > li > a {
+    color: #fff;
+    outline: 0;
+    text-decoration: none;
+}
+
+.head_navigation > ul > div > li:hover {
+    background: #fff;
+}
+
+.head_navigation > ul > div > .active {
+    background: #fff;
+}
+
+.head_navigation > ul > div > li:hover > a {
+    color: #000;
+}
+
+.head_navigation > ul > div > .active > a {
+    color: #000;
+}
+
+.login_button > div > ul, .user_info > div > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.to-index {
+    position: absolute;
+    left: 449px;
+    color: white;
+}
+@media screen and (max-width:1200px){
+    .to-index {
+        left: 300px;
+    }
+
+}

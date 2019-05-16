@@ -1,0 +1,249 @@
+.box {
+    width: 60%;
+    left: 20%;
+    right: 20%;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    position: relative;
+}
+
+.forum-left-box {
+    display: inline-block;
+    width: 76%;
+    min-height: 500px;
+    padding-left: 20px;
+    padding-top: 20px;
+    border: 1px #999999 solid;
+    margin: 10px;
+}
+
+.forum-head-msg {
+    width: 77px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 77px;
+    margin-top: 20px;
+}
+
+.forum-user-name {
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+    color: rgba(0, 0, 255, 0.6);
+}
+
+.forum-right-box {
+    float: right;
+    display: inline-block;
+    width: 20%;
+    min-height: 500px;
+}
+
+.forum-right--button-box {
+    position: absolute;
+    bottom: 15px;
+    right: 23%;
+}
+
+.report {
+    display: inline-block;
+    color: #0094ff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.time {
+    display: inline-block;
+    color: #ccc;
+    font-size: 14px;
+    cursor: default;
+    margin-left: 10px;
+}
+
+.remark {
+    display: inline-block;
+    color: #0094ff;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.forum-title {
+    text-align: center;
+    color: #ff7f00;
+    font-size: 22px;
+}
+
+.remark-box {
+    width: 60%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.remark-author-img {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    border-radius: 21px;
+    margin-left: 10px;
+    float: left;
+    margin-top: 10px;
+}
+
+.remark-right-box {
+    display: inline-block;
+    width: 77%;
+    margin-left: 20px;
+}
+
+.remark-content-box {
+    border-bottom: 1px #aaaaaa solid;
+}
+
+.remark-author-name {
+    color: #888888;
+    margin-top: 20px;
+    margin-left: -10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.remark-content {
+    margin-top: 22px;
+    cursor: default;
+    border: 1px #aaa dashed;
+    padding: 5px;
+}
+
+.remark-button-box {
+    float: right;
+}
+
+.div-button {
+    display: inline-block;
+    margin-right: 10px;
+    color: #0094ff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.editor-box {
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.button-box {
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.editor-button-publish {
+    display: inline-block;
+    background-color: #ff8b3d;
+    border: 1px solid #ff8b3d;
+    height: 37px;
+    line-height: 37px;
+    width: 85px;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+}
+
+.floor {
+    float: right;
+    margin-right: 10px;
+    color: #aaa;
+}
+
+.page_box {
+    width: 100%;
+    text-align: center;
+}
+
+img {
+    max-width: 97.5%;
+}
+
+.draga_box {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+.draga {
+    border-radius: 30px;
+    width: 523px;
+    min-height: 370px;
+    background: white;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close_draga {
+    float: right;
+    font-size: 30px;
+    color: #999999;
+    margin: 10px 15px 0 0;
+    cursor: pointer;
+}
+
+.close_draga:hover {
+    color: #00Bfff;
+}
+
+.draga_content {
+    margin: 95px auto 0 auto;
+    width: 60%;
+}
+
+.draga_title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.file_input_submit {
+    width: 75px;
+    height: 30px;
+    margin-top: 70px;
+    margin-left: 50px;
+    background: #00Bfff;
+    border: 0;
+    border-radius: 5px;
+}
+
+.file_input_esc {
+    width: 75px;
+    height: 30px;
+    margin-top: 70px;
+    margin-left: 50px;
+    background: #dddddd;
+    border: 0;
+    border-radius: 5px;
+}
+
+.p-box {
+    display: inline-block;
+    margin-top: 20px;
+    width: 100px;
+}
+
+.forum-index {
+    position: absolute;
+    left: 500px;
+    color: white;
+}
+@media screen and (max-width:1200px){
+    .forum-index{
+        left: 350px;
+    }
+}

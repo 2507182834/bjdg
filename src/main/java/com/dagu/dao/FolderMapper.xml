@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.FolderDao">
+
+	<select id="getFolderByFid" resultType="com.dagu.pojo.Folder">
+		select * from folder where fid = #{fid}
+	</select>
+
+	<select id="getChildFolders" resultType="com.dagu.pojo.Folder">
+		select * from folder where ffid = #{ffid} and authority >= #{authority} order by fname;
+	</select>
+
+	<select id="getCountByFnameAndFfid" resultType="int">
+		select count(*) from folder where ffid = #{folder.ffid} and fname = #{folder.fname}
+	</select>
+
+	<insert id="addFolder" parameterType="com.dagu.pojo.Folder">
+		insert  into  folder (fid,ffid,fname,lasttime,createtime,creater,path,authority) value
+		(default ,#{folder.ffid},#{folder.fname},now(),now(),#{folder.creater.uid},#{folder.path},#{folder.authority});
+	</insert>
+
+	<delete id="delFolderByFnameAndFfid" parameterType="com.dagu.pojo.Folder">
+		delete from folder where ffid = #{folder.ffid} and fname = #{folder.fname}
+	</delete>
+
+	<update id="updateFolder" parameterType="com.dagu.pojo.Folder">
+		update folder set fname = #{folder.fname},authority = #{folder.authority},lasttime = now(),path = #{folder.path} where fid = #{folder.fid};
+	</update>
+
+	<delete id="DeleteFolderByFid" parameterType="int">
+		delete from folder where fid = #{fid}
+	</delete>
+</mapper>

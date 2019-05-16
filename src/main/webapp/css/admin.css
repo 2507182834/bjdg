@@ -1,0 +1,131 @@
+.main-box{
+    width: 60%;
+    margin: 30px auto 0 auto;
+}
+.content-box{
+    width: 49.5%;
+    display: inline-block;
+    border: 1px #999999 solid;
+    padding: 10px 30px 10px 30px;
+    height: 330px;
+    float: left;
+    margin-left: 5px;
+}
+
+.title-box{
+    border: 1px #999999 solid;
+    padding-left: 10px;
+}
+
+.title-input{
+    outline: none;
+    border: 0px;
+    width: 72%;
+    height: 25px;
+}
+
+.publish-system-msg{
+    float: right;
+    background: rgba(255,56,00,1);
+    color: white;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.no-unRead-msg{
+    font-size: 40px;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    line-height: 350%;
+    color: #AAAAAA;
+}
+.unRead-msg-box{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px #aaa solid;
+}
+.unRead-msg{
+    color: #0094ff;
+    cursor: pointer;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.unRead-msg-box:hover{
+    background-color: rgba(200,0,0,.1);
+}
+
+.unRead-msg-time{
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    color: #999;
+    cursor: default;
+    margin-right: 20px;
+}
+.draga_box{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.draga{
+    border-radius: 30px;
+    width: 523px;
+    min-height: 370px;
+    background: white;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close_draga{
+    float: right;
+    font-size: 30px;
+    color: #999999;
+    margin: 10px 15px 0 0;
+    cursor: pointer;
+}
+.close_draga:hover{
+    color: #00Bfff;
+}
+.draga_content {
+    margin: 80px 50px 0 50px;
+    border: 1px #bbb dashed;
+    padding: 10px;
+    min-height: 160px;
+}
+.input_submit{
+    color: white;
+    width: 120px;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: 130px;
+    background: rgb(255,75,0);
+    border: 0;
+    border-radius: 5px;
+}
+.input_esc{
+    width: 75px;
+    height: 30px;
+    margin-top: 50px;
+    margin-left: 50px;
+    background: #dddddd;
+    border: 0;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:1200px){
+    .content-box{
+        width: 100%;
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.SystemMsgDao">
+        <select id="getUnreadSystemMsgById" parameterType="int" resultType="com.dagu.pojo.SystemMsg">
+                select * from systemmsg where (`to` = #{id} or `to` = 0) order by sendtime desc;
+        </select>
+
+        <update id="updateIsreadById">
+                update systemmsg set readnames = CONCAT(IFNULL(readnames,""),#{uid}) where id = #{id}
+        </update>
+
+        <insert id="addSystemMsg" parameterType="java.lang.String" >
+                insert into systemmsg (id, title, msg, `to`, sendtime, isread) value (default ,#{title},#{text},0,now(),0);
+        </insert>
+</mapper>
+

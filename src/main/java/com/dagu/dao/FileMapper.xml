@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.FileDao">
+
+    <select id="getFileByFid" resultType="com.dagu.pojo.File">
+		select * from file where fid = #{fid}
+	</select>
+
+    <select id="getFiles" resultType="com.dagu.pojo.File">
+		select * from file where ffid = #{ffid} and authority >= #{authority} order by fname;
+	</select>
+
+	<select id="getCountByFnameAndFfid" resultType="int">
+		select count(*) from file where ffid = #{file.ffid} and fname = #{file.fname}
+	</select>
+
+	<insert id="addFile" parameterType="com.dagu.pojo.File">
+		insert  into  file (fid,ffid,fname,lasttime,uploadman,path,authority) value
+		(default ,#{file.ffid},#{file.fname},now(),#{file.uploadMan},#{file.path},#{file.authority});
+	</insert>
+
+	<update id="updateFile" parameterType="com.dagu.pojo.File">
+		update file set fname = #{file.fname},authority = #{file.authority},lasttime = now(),path = #{file.path} where fid = #{file.fid};
+	</update>
+
+	<delete id="DeleteFileByFid" parameterType="int">
+		delete from file where fid = #{fid}
+	</delete>
+
+	<delete id="DeleteFileByFfid" parameterType="int">
+		delete from file where ffid = #{ffid}
+	</delete>
+</mapper>

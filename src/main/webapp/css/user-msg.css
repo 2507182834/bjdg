@@ -1,0 +1,136 @@
+.user-msg-top{
+    width: 70%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.user-msg-main-left{
+    width: 30%;
+    height: 200px;
+    float: left;
+    border-right: 1px #bbbbbb solid;
+}
+.user-msg-main-left-top{
+    width: 100%;
+    height: 50%;
+}
+.user-msg-main-left-bottom{
+    width: 100%;
+    height: 40%;
+}
+.user-msg-main-right{
+    width: 70%;
+    height: 200px;
+    float: right;
+    padding: 10px;
+}
+.user-img{
+    width: 78px;
+    height: 78px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding-top: 58px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+.user-img-tips{
+    width: 78px;
+    height: 20px;
+    background: rgba(99,99,99,.5);
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    display: none;
+}
+.user-name{
+    width: 100%;
+    text-align: center;
+    color: #666666;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.no-unRead-msg{
+    font-size: 40px;
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    line-height: 350%;
+    color: #AAAAAA;
+}
+.user-img-main{
+    width: 70%;
+    border: 1px #AAAAAA solid;
+    height: 493px;
+    margin: auto;
+    padding: 10px;
+}
+.forum-msg{
+    font-size: 40px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 500%;
+    color: #AAAAAA;
+}
+.unRead-msg-box{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px #aaa solid;
+}
+.unRead-msg{
+    color: #0094ff;
+    cursor: pointer;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.unRead-msg-box:hover{
+    background-color: rgba(200,0,0,.1);
+}
+
+.unRead-msg-time{
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    color: #999;
+    cursor: default;
+    margin-right: 20px;
+}
+.draga_box{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.draga{
+    border-radius: 30px;
+    width: 523px;
+    min-height: 370px;
+    background: white;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close_draga{
+    float: right;
+    font-size: 30px;
+    color: #999999;
+    margin: 10px 15px 0 0;
+    cursor: pointer;
+}
+.close_draga:hover{
+    color: #00Bfff;
+}
+.draga_content{
+    margin: 80px 50px 0 50px;
+    border: 1px #bbb dashed;
+    padding: 10px;
+    min-height: 200px;
+}

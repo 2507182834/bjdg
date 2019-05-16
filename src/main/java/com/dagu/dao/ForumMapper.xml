@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.ForumDao">
+        <insert id="addForum" parameterType="com.dagu.pojo.Forum">
+                insert into `forum` value (default , #{forum.title},#{forum.content},now(),#{forum.author})
+        </insert>
+
+        <insert id="addRemark" parameterType="com.dagu.pojo.Remark">
+                insert into `remark` value (default ,#{remark.content},now(),#{remark.author},#{remark.fid},#{remark.floor})
+        </insert>
+
+        <select id="getForumsOrderByHot" parameterType="int" resultType="com.dagu.pojo.Forum">
+                SELECT f.*,u.uname authorname ,(SELECT COUNT(*) FROM remark r WHERE r.fid = f.fid) hot FROM `forum` f LEFT JOIN `user` u ON f.author = u.uid where title like '%${value}%' ORDER BY hot ${type} limit #{pageStartRow},#{pageRecorders}
+        </select>
+
+        <select id="getForumsOrderByCreateTime" parameterType="int" resultType="com.dagu.pojo.Forum">
+                SELECT f.*,u.uname authorname ,(SELECT COUNT(*) FROM remark r WHERE r.fid = f.fid) hot FROM `forum` f LEFT JOIN `user` u ON f.author = u.uid where title like '%${value}%' ORDER BY createtime ${type} limit #{pageStartRow},#{pageRecorders}
+        </select>
+
+        <select id="getTotalRowsFromForum" resultType="int">
+                select count(*) from forum where title like '%${value}%'
+        </select>
+
+        <select id="getTotalRowsFromRemark" resultType="int">
+                select count(*) from remark where fid = #{fid}
+        </select>
+
+        <select id="getForumById" parameterType="int" resultType="com.dagu.pojo.Forum">
+                select f.*,u.uname authorname FROM `forum` f LEFT JOIN `user` u ON f.author = u.uid where fid = #{fid}
+        </select>
+
+        <select id="getRemarksByFid" parameterType="int" resultType="com.dagu.pojo.Remark">
+                select r.*,u.uname authorname FROM `remark` r LEFT JOIN `user` u ON r.author = u.uid where fid = #{fid} order by createtime limit #{pageStartRow},#{pageRecorders}
+        </select>
+        <select id="getMaxRemarkFloor" parameterType="int" resultType="int">
+               SELECT ifnull(MAX(`floor`),0) FROM remark WHERE fid = #{fid};
+        </select>
+
+        <select id="getForumsByAuthor" parameterType="int" resultType="com.dagu.pojo.Forum">
+                SELECT f.*,u.uname authorname ,(SELECT COUNT(*) FROM remark r WHERE r.fid = f.fid) hot FROM `forum` f LEFT JOIN `user` u ON f.author = u.uid where author = #{author} and title like '%${value}%' ORDER BY createtime ${type} limit #{pageStartRow},#{pageRecorders}
+        </select>
+
+        <select id="getTotalRowsByAuthorFromForum" resultType="int">
+                select count(*) from forum where author = #{author} and title like '%${value}%'
+        </select>
+
+        <select id="getRemarkById" parameterType="int" resultType="com.dagu.pojo.Remark">
+                select * from remark where id = #{id};
+        </select>
+
+        <select id="getRemarkNumById" parameterType="int" resultType="int" >
+                SELECT COUNT(*)  FROM (SELECT * FROM remark WHERE fid = #{fid}) AS r WHERE createtime <![CDATA[ <= ]]> (SELECT createtime FROM remark WHERE id = #{id})
+        </select>
+
+        <select id="getRemarkByFidAndFloor" parameterType="int" resultType="com.dagu.pojo.Remark">
+                select * from remark where fid = #{fid} and floor = #{floor};
+        </select>
+
+        <delete id="delForumById" parameterType="int">
+              delete from forum where fid = #{fid};
+        </delete>
+
+        <delete id="delRemarkByFid" parameterType="int" >
+              delete from remark where fid = #{fid};
+        </delete>
+
+        <delete id="delRemarkById" parameterType="int">
+                delete from remark where id = #{id};
+        </delete>
+</mapper>

@@ -1,0 +1,16 @@
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #0094ff;
+}
+
+.display_none{
+    display: none;
+}
+
+#set-accountmsg:hover,#set-personalmsg:hover,#set-head:hover,#set-forum:hover,#myAuthority:hover{
+    color: rgb(0, 148, 255);
+}

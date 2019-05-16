@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>百佳大谷 | -登陆注册</title>
+    <link rel="icon" href="imgs/favicon.ico" type="img/x-ico"/>
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+    <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/login.js"></script>
+</head>
+<body>
+<!--/*@thymesVar id="type" type="java.lang.String"*/-->
+<input th:value="${type}" type="hidden" id="type"/>
+<input th:value="${url}" type="hidden" id="url"/>
+
+<div class="wrap">
+    <div class="logo"><img alt="百佳大谷机器人" title="百佳大谷机器人" src="imgs/bjdg.jpg"></div>
+
+    <div class="login_box" id="login_box">
+
+        <span class="daohan" style="background:#00Bfff">登陆</span>
+        <span class="daohan" style="background:#FFF;border-bottom: 3px rgba(99,99,99,.15) solid;"
+              id="register">注册</span>
+        <div style="width: 100%;height: 1px"></div>
+        <div class="info_form">
+            <div id="login_uname_msg" class="msg"></div>
+            <p>用户名</p>:<input id="login_uname" type="text" placeholder="  用户名/邮箱/手机号"/>
+            <br>
+            <div id="login_password_msg" class="msg"></div>
+            <p>密&nbsp&nbsp&nbsp码</p>:<input id="login_password" type="password" placeholder="  登陆密码"/>
+        </div>
+        <div class="login_button">
+            <button class="login_submit" id="login_submit">登陆</button>
+        </div>
+    </div>
+
+    <div class="register_box" id="register_box">
+        <span class="daohan" style="background:#FFF;border-bottom: 3px rgba(99,99,99,.15) solid;" id="login">登陆</span>
+        <span class="daohan" style="background:#00Bfff">注册</span>
+        <div style="width: 100%;height: 1px"></div>
+
+        <div class="info_form">
+            <div id="uname_msg" class="msg"></div>
+            <p>用户名</p>:<input id="register_uname" type="text" placeholder="  用户名(4-16个字符，不允许出现中文字符)"/>
+            <br>
+
+            <div id="email_msg" class="msg"></div>
+            <p>邮&nbsp&nbsp&nbsp箱</p>:<input id="register_email" type="email" placeholder="  邮箱"/>
+            <br>
+
+            <div id="password_msg" class="msg"></div>
+            <p>密&nbsp&nbsp&nbsp码</p>:<input id="register_password" type="password" placeholder="  密码"/>
+            <br>
+
+            <div id="ensure_password_msg" class="msg"></div>
+            <p>确认密码</p>:<input id="register_ensure_password" type="password" placeholder="  确认密码"/>
+        </div>
+        <div class="login_button">
+            <button class="login_submit" id="register_submit">注册</button>
+        </div>
+    </div>
+
+    <div class="footer_copyright" id="store_footer">
+        <div style="height: 280px; width: 100%;"></div>
+        <div id="footer_content">
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="outline:none;text-decoration:none;color:#666666;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"> </span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';outline:none;line-height:2;font-size:12px;">Copyright © 2004&nbsp;</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;">
+					<span style="margin:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;font-size:12px;">&nbsp;中山市百佳大谷电子科技有限公司</span>
+				</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">版权所有 |​ 工信部网站<a
+                        href="http://www.beian.miit.gov.cn" target="_blank">​www.beian.miit.gov.cn</a>​ |&nbsp;粤ICP备06112223号-5&nbsp;<br></span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">经营许可证 91442000769328574C | ​计算机软件著作权登记 软著登字第1348992号&nbsp;软著登字第1090245号​<br></span>
+            </p>
+            <p><br></p>
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"></span><span
+                    style="outline:none;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"><a
+                    href="http://www.zhuyun.cn/" target="_blank"
+                    style="outline:none;text-decoration:none;color:#2A586F;margin:0px;padding:0px;"></a></span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

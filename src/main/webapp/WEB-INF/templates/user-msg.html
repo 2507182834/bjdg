@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>百佳大谷 | -个人空间</title>
+    <link rel="icon" href="imgs/favicon.ico" type="img/x-ico"/>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/mycommon.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/common.min.css" rel="stylesheet" type="text/css">
+    <link href="css/major_maincolor.css" rel="stylesheet" type="text/css" css_name="css_major">
+    <link href="css/user-msg.css" rel="stylesheet" type="text/css">
+
+    <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://img9.tongzhuo100.com/js/jquery.form.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/user-msg.js"></script>
+</head>
+<body>
+<!--/*@thymesVar id="page" type="com.dagu.utils.PageUtils"*/-->
+<input th:value="${page.getCurrentPage()}" type="hidden" id="current-page"/>
+<input th:value="${page.getTotalPages()}" type="hidden" id="total-page"/>
+<input th:value="${page.hasPreviousPage}" type="hidden" id="hasPreviousPage"/>
+<input th:value="${page.hasNextPage}" type="hidden" id="hasNextPage"/>
+
+<div class="wrap">
+    <!-- 用户登陆信息 -->
+    <div style="background: #000000">
+        <div class="login_button" id="login_button">
+            <div>
+                <ul>
+                    <li><a href="" id="login">登录</a></li>
+                    <li><a href="" id="register">注册</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="user_info" id="user_info">
+            <div>
+                <a class="to-index" href="" id="toIndex">首页</a>
+                <ul class="user-dropdown dropdown">
+                    <li>
+                        <a href="#" id="user_page"></a>
+                        <ul class="dropdown-menu user-dropdown-menu">
+                            <li><a id="userMsg">个人空间</a></li>
+                            <li><a id="accountMsg">账户信息</a></li>
+                            <li class="divider"></li>
+                            <li><a id="logout">退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 头部展示 -->
+    <div id="store_header">
+        <div class="header_logo_contentBg">
+            <div class="header_logo_content">
+                <a href="#"><img src="imgs/bjdg.jpg"></a>
+                <span>聚焦智慧产品，人类生活因我而精彩</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="user-msg-top">
+        <div class="user-msg-main-left">
+            <div class="user-msg-main-left-top">
+                <div class="user-img" id="user-img">
+                    <div class="user-img-tips" id="user-img-tips">点击设置头像</div>
+                </div>
+                <div class="user-name" id="user-name" th:text="${session.user.getName()}"></div>
+            </div>
+        </div>
+        <div class="user-msg-main-right">
+            <div style="margin-bottom: 10px; font-size: 16px">系统消息</div>
+            <div class="no-unRead-msg" th:style="'display:'+@{${systemMsgs.size()}==0?'block' : 'none'}">暂无未读信息</div>
+            <div th:style="'overflow-y: scroll; height: 150px;display:'+@{${systemMsgs.size()}==0?'none' : 'block'}">
+                <!--/*@thymesVar id="systemMsgs" type="java.util.List<com.dagu.pojo.SystemMsg>"*/-->
+                <div class="unRead-msg-box" th:each="l : ${systemMsgs}">
+                    <div class="unRead-msg" th:style="'color:'+@{${l.isread}==true?'#999999' : '#0094ff'}"
+                         th:text="${l.getTitle()}"></div>
+                    <div class="unRead-msg-time" th:text="${l.getTime()}"></div>
+                    <input th:value="${l.msg}" type="hidden"/>
+                    <input value="systemmsg" type="hidden"/>
+                    <input th:value="${l.id}" type="hidden"/>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    \
+
+    <div class="user-img-main">
+        <div style="margin-bottom: 10px; font-size: 16px">论坛互动</div>
+        <div class="forum-msg" th:style="'display:'+@{${page.list}==null?'block' : 'none'}">暂无信息</div>
+        <!--/*@thymesVar id="page" type="com.dagu.utils.PageUtils"*/-->
+        <div class="unRead-msg-box" th:each="l : ${page.list}">
+            <div class="unRead-msg" th:style="'color:'+@{${l.isread}==true?'#999999' : '#0094ff'}"
+                 th:text="${l.title}"></div>
+            <div class="unRead-msg-time" th:text="${l.time}"></div>
+            <input th:value="${l.msg}" type="hidden"/>
+            <input value="forummsg" type="hidden"/>
+            <input th:value="${l.id}" type="hidden"/>
+        </div>
+    </div>
+    <div style="width: 100%; text-align: center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination"></ul>
+        </nav>
+    </div>
+
+    <div class="draga_box" id="edit_draga_box">
+
+        <div class="draga">
+            <div class="close_draga" id="edit_close_draga">X</div>
+            <div style="width:100%;height: 1px"></div>
+            <div class="draga_content"></div>
+            <div style="width:100%;height: 30px"></div>
+        </div>
+    </div>
+
+    <div class="footer_copyright" id="store_footer">
+        <div id="footer_content">
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="outline:none;text-decoration:none;color:#666666;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"> </span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';outline:none;line-height:2;font-size:12px;">Copyright © 2004&nbsp;</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;">
+					<span style="margin:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;font-size:12px;">&nbsp;中山市百佳大谷电子科技有限公司</span>
+				</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">版权所有 |​ 工信部网站<a
+                        href="http://www.beian.miit.gov.cn" target="_blank">www.beian.miit.gov.cn</a>​ |&nbsp;粤ICP备06112223号-5&nbsp;<br></span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">经营许可证 91442000769328574C | ​计算机软件著作权登记 软著登字第1348992号&nbsp;软著登字第1090245号​<br></span>
+            </p>
+            <p><br></p>
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"></span><span
+                    style="outline:none;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"><a
+                    href="http://www.zhuyun.cn/" target="_blank"
+                    style="outline:none;text-decoration:none;color:#2A586F;margin:0px;padding:0px;"></a></span></p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

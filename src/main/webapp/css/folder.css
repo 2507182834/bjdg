@@ -1,0 +1,161 @@
+a{
+    color: black;
+}
+a:hover{
+    color: #0094ff;
+    text-decoration:none;
+}
+
+.folder_box{
+    width: 80%;
+    margin: 20px auto 0;
+    min-height: 600px;
+}
+.folder_line{
+    width: 100%;
+    height: 30px;
+    border-bottom: #888888 1px solid;
+    line-height: 30px;
+}
+.folder_name{
+    width: 70%;
+    height: 100%;
+    display: inline-block;
+}
+.folder_lasttime{
+    width: 29%;
+    height: 100%;
+    display: inline-block;
+}
+.folder_icon{
+    width: 25px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.file_icon{
+    width: 25px;
+    height: 26px;
+    margin-right: 5px;
+}
+
+.draga_box{
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+}
+
+.draga{
+    border-radius: 30px;
+    width: 523px;
+    min-height: 370px;
+    background: white;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.close_draga{
+    font-size: 25px;
+    float: right;
+    margin: 10px 30px 0 0;
+    z-index: 999;
+}
+.close_draga:hover{
+    color: #00Bfff;
+}
+
+.draga_content{
+    margin: 95px auto 0 auto;
+    width: 60%;
+}
+
+.draga_title{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.file_input{
+    margin-bottom: -10px;
+    width: 200px;
+    height: 25px;
+}
+.file_input_submit{
+    width: 75px;
+    height: 30px;
+    margin-top: 80px;
+    margin-left: 50px;
+    background: #00Bfff;
+    border: 0;
+    border-radius: 5px;
+}
+.file_input_esc{
+    width: 75px;
+    height: 30px;
+    margin-top: 80px;
+    margin-left: 50px;
+    background: #dddddd;
+    border: 0;
+    border-radius: 5px;
+}
+
+.file_handle{
+    display: none;
+    width: 80%;
+    height: 30px;
+    margin: auto;
+}
+.upload_button{
+    width: 90px;
+    height: 30px;
+    margin-top: 13px;
+    margin-left: 0;
+    background: #00Bfff;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+}
+
+.folder_name_msg{
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+.edit_folder_name{
+    display: inline-block;
+    height: 25px;
+    min-width: 180px;
+    background: rgba(0,191,255,0.3);
+    line-height: 25px;
+    text-align: center;
+    border-radius: 12px;
+    webkit-box-shadow: #ccc 0px 0px 10px;
+    -moz-box-shadow: #ccc 0px 0px 10px;
+    box-shadow: #ccc 0px 0px 2px;
+}
+
+.draga_content_title{
+    width: 60px;
+    display: inline-block;
+}
+
+.authority{
+    width: 160px;
+    margin-top: 20px;
+    height: 24px;
+}
+
+.progress-tips{
+    color: #0094ff;
+    position: absolute;
+    left: 140px;
+}
+@media screen and (max-width:1200px){
+    .draga_box{
+        width: 1190px;
+        height: 600px;
+    }
+}

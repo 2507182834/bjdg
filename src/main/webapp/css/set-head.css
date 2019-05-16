@@ -1,0 +1,287 @@
+#crop_image {
+    float: left;
+    width: 55%;
+    background-color: #333;
+    user-select: none;
+    margin: 3% 20%;
+    border: 1px solid #DEDEDE;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#crop_image_top,#crop_image_bottom {
+    float: left;
+    width: 100%;
+    padding: 2%;
+    background-color: white;
+}
+/* 底部 */
+#crop_image_bottom {
+    text-align: right;
+}
+
+#crop_image_bottom input {
+    height: 30px;
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: none;
+    margin-left: 20px;
+    outline: none;
+}
+
+#submitBtn {
+    background-color: #40aff2;
+    color: white;
+    cursor: pointer;
+}
+
+#submitBtn:HOVER {
+    background-color: #409ff2;
+}
+/* 顶部 */
+#crop_image_top h4 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    display: inline-block;
+    border-right: 1px #888888 solid;
+    width: 242px;
+    height: 30px;
+    border-left: 1px #888888 solid;
+    line-height: 30px;
+    text-align: center;;
+}
+/* 裁剪部分 */
+#crop_image_content {
+    float: left;
+    position: relative;
+    text-align: center;
+    width: 92%;
+    margin: 4%;
+}
+
+#cropBox {
+    position: relative;
+}
+
+#crop_image_content #cropimg1 {
+    width: 385px;
+    height: 240px;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#crop_image_content #cropimg2 {
+    width: 385px;
+    height: 240px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip: rect(0, 150px, 150px, 0);
+}
+
+#crop_image_content #mainBox {
+    border: 1px solid white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    cursor: move;
+}
+
+.minBox {
+    position: absolute;
+    height: 8px;
+    width: 8px;
+    background-color: white;
+}
+
+.left-up {
+    top: -4px;
+    left: -4px;
+    cursor: nw-resize;
+}
+
+.up {
+    left: 50%;
+    margin-left: -4px;
+    top: -4px;
+    cursor: n-resize;
+}
+
+.right-up {
+    right: -4px;
+    top: -4px;
+    cursor: ne-resize;
+}
+
+.left {
+    top: 50%;
+    margin-top: -4px;
+    left: -4px;
+    cursor: w-resize;
+}
+
+.right {
+    top: 50%;
+    margin-top: -4px;
+    right: -4px;
+    cursor: w-resize;
+}
+
+.left-down {
+    bottom: -4px;
+    left: -4px;
+    cursor: sw-resize;
+}
+
+.down {
+    bottom: -4px;
+    left: 50%;
+    margin-left: -4px;
+    cursor: s-resize;
+}
+
+.right-down {
+    bottom: -4px;
+    right: -4px;
+    cursor: se-resize;
+}
+/* 预览框 */
+#preview {
+    position: absolute;
+    top: 0;
+}
+
+#preview #cropimg3 {
+    position: absolute;
+    width: 385px;
+    height: 240px
+}
+
+/* 上传图片区域 */
+#uploadForm {
+    float: left;
+    margin: -2% 20% 5% 20%;
+}
+
+#uploadImage {
+    position: relative;
+    width: 372px;
+    height: 202px;
+    background-color: #40aff2;
+    text-align: center;
+}
+
+#uploadImage #cropimg4 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+#uploadImage .addImage {
+    display: inline-block;
+    position: relative;
+    min-width: 80px;
+    height: 40px;
+    overflow: hidden;
+    padding: 0 30px;
+    margin: 81px auto;
+    border: none;
+    background-color: #F3F3F3;
+    color: #555;
+    font: 14px/40px 'MicroSoft Yahei', 'Simhei';
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#uploadImage .addImage:HOVER {
+    background-color: #DEDEDE;
+}
+
+#uploadImage #imgFile
+{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    cursor: hand;
+    border: none;
+    font-size: 0;
+    padding: 0;
+    /* older safari/Chrome browsers */
+    -webkit-opacity: 0;
+    /* Netscape and Older than Firefox 0.9 */
+    -moz-opacity: 0;
+    /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+    -khtml-opacity: 0;
+    /* IE9 + etc...modern browsers */
+    opacity: 0;
+    /* IE 4-9 */
+    filter:alpha(opacity=0);
+    /*This works in IE 8 & 9 too*/
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    /*IE4-IE9*/
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+
+#uploadImage #imgFile::-webkit-file-upload-button {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 40px;
+    cursor: pointer;
+    cursor: hand;
+    border: none;
+    font-size: 0;
+    padding: 0;
+    /* older safari/Chrome browsers */
+    -webkit-opacity: 0;
+    /* Netscape and Older than Firefox 0.9 */
+    -moz-opacity: 0;
+    /* Safari 1.x (pre WebKit!) 老式khtml内核的Safari浏览器*/
+    -khtml-opacity: 0;
+    /* IE9 + etc...modern browsers */
+    opacity: 0;
+    /* IE 4-9 */
+    filter:alpha(opacity=0);
+    /*This works in IE 8 & 9 too*/
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    /*IE4-IE9*/
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
+@media screen and (max-width:1200px){
+    #crop_image{
+        width: 90%;
+        margin: 5%;
+    }
+    .content-box{
+        width: 80%;
+    }
+    .box{
+        width: 100%;
+    }
+    #uploadImage{
+        left: -177px;
+    }
+}

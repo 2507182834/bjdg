@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.UserDao">
+
+        <insert id="addUserToTemp" parameterType="com.dagu.pojo.User">
+                insert into `user_temp` value (#{id} , #{user.uname},#{user.password},#{user.email},#{user.phone},#{user.authority})
+        </insert>
+
+        <insert id="addUser" parameterType="com.dagu.pojo.User">
+                insert into `user` value (default, #{user.uname},#{user.password},#{user.email},#{user.phone},#{user.authority})
+        </insert>
+
+        <select id="getCountByEmail" parameterType="java.lang.String" resultType="int">
+                select count(*) from `user` where email = #{email}
+        </select>
+
+        <select id="getCountByEmailFromTemp" parameterType="java.lang.String" resultType="int">
+                select count(*) from `user_temp` where email = #{email}
+        </select>
+
+        <select id="getCountByUanme" parameterType="java.lang.String" resultType="int">
+                select count(*) from `user` where uname = #{uname}
+        </select>
+
+        <select id="getCountByUanmeFromTemp" parameterType="java.lang.String" resultType="int">
+                select count(*) from `user_temp` where uname = #{uname}
+        </select>
+
+        <select id="getUser" parameterType="java.lang.String" resultType="com.dagu.pojo.User">
+                select * from `user` where (uname = #{uname} or email = #{uname} or phone = #{uname}) and password = #{password}
+        </select>
+
+        <select id="getUserFromTemp" parameterType="java.lang.String" resultType="com.dagu.pojo.User">
+                select uname,password,email,phone,authority from `user_temp` where (uname = #{uname} or email = #{uname} or phone = #{uname}) and password = #{password}
+        </select>
+
+        <select id="getUserByIdFromTemp" parameterType="java.lang.String" resultType="com.dagu.pojo.User">
+                select uname,password,email,phone,authority from `user_temp` where uid = #{id}
+        </select>
+
+        <delete id="delUserFromTemp" parameterType="java.lang.String">
+                delete from `user_temp` where uid =  #{id}
+        </delete>
+
+        <select id="getUserById" parameterType="int" resultType="com.dagu.pojo.User">
+                select * from `user` where uid = #{uid};
+        </select>
+
+        <select id="getCountByPhone" parameterType="java.lang.String" resultType="int">
+                select count(*) from `user` where phone = #{phone}
+        </select>
+
+        <select id="getCountByPhoneFromTemp" parameterType="java.lang.String" resultType="int">
+                select count(*) from `user_temp` where phone = #{phone}
+        </select>
+
+        <update id="updateUserById" parameterType="com.dagu.pojo.User">
+                update `user`
+                <trim prefix="set" suffixOverrides=",">
+                        <if test="user.name!=null">uname=#{user.name},</if>
+                        <if test="user.email!=null">email=#{user.email},</if>
+                        <if test="user.password!=null">password=#{user.password},</if>
+                        <if test="user.phone!=null">phone=#{user.phone},</if>
+                </trim>
+                WHERE uid=#{user.uid}
+        </update>
+</mapper>

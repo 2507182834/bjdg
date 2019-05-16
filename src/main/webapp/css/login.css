@@ -1,0 +1,101 @@
+.logo{
+    width: 60%;
+    margin: auto;
+}
+.login_box,.register_box{
+    width: 30%;
+    min-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+
+    -webkit-box-shadow: #ccc 0px 0px 10px;
+    -moz-box-shadow: #ccc 0px 0px 10px;
+    box-shadow: #ccc 0px 0px 10px;
+}
+.display_none{
+    display: none;
+}
+
+.register_box{
+    min-height: 450px;
+}
+
+.login_box>div,.register_box>div{
+    width: 70%;
+}
+.title{
+    margin-top: 30px;
+    font-weight: bold;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+.info_form{
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.info_form>p{
+    display: inline-block;
+    width: 65px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.info_form>input{
+    width: 270px;
+    height: 33px;
+    margin-left: 15px;
+}
+.login_button{
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.login_submit{
+    width: 85%;
+    height: 37px;
+    background: #00Bfff;
+    border: 0;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.msg{
+    font-size: 10px;
+    margin-left: 80px;
+    color: red;
+}
+
+.daohan{
+    height: 35px;
+    width: 50%;
+    display: inline-block;
+    border-bottom: 1px #999999 solid;
+    float: left;
+    webkit-box-shadow: #ccc 0px 0px 10px;
+    -moz-box-shadow: #ccc 0px 0px 10px;
+    box-shadow: #ccc 0px 0px 10px;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+}
+.wrap{
+    width: 100%;
+    min-width: 1190px;
+    background: white;
+    margin: 0 auto 0 auto;
+}
+
+@media screen and (max-width:1200px){
+    .info_form>input {
+        width: 155px;
+        height: 33px;
+        margin-left: 17px;
+    }
+
+}

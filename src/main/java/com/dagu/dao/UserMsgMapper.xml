@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.UserMsgDao">
+
+        <insert id="addUserMsg" parameterType="com.dagu.pojo.UserMsg">
+                insert into `usermsg` (id, `name`, sex, `birthday`, education, job, uid) value(
+                <choose>
+                        <when test="userMsg.id != null">
+                                #{userMsg.id},
+                        </when>
+                        <otherwise>
+                                default ,
+                        </otherwise>
+                </choose>
+                <choose>
+                        <when test="userMsg.name != null">
+                                #{userMsg.name},
+                        </when>
+                        <otherwise>
+                                null,
+                        </otherwise>
+                </choose>
+                <choose>
+                        <when test="userMsg.sex != null and userMsg.sex !=''">
+                                #{userMsg.sex},
+                        </when>
+                        <otherwise>
+                                null ,
+                        </otherwise>
+                </choose>
+                <choose>
+                        <when test="userMsg.birthday != null and userMsg.birthday !=''">
+                                #{userMsg.birthday},
+                        </when>
+                        <otherwise>
+                                null ,
+                        </otherwise>
+                </choose>
+                <choose>
+                        <when test="userMsg.education != null and userMsg.education !=''">
+                                #{userMsg.education},
+                        </when>
+                        <otherwise>
+                                null ,
+                        </otherwise>
+                </choose>
+                <choose>
+                        <when test="userMsg.job != null and userMsg.job !=''">
+                                #{userMsg.job},
+                        </when>
+                        <otherwise>
+                                null ,
+                        </otherwise>
+                </choose>
+                <choose>
+                        <when test="userMsg.uid != null">
+                                #{userMsg.uid});
+                        </when>
+                        <otherwise>
+                                null );
+                        </otherwise>
+                </choose>
+        </insert>
+
+        <select id="getUserMsgByUid" parameterType="int" resultType="com.dagu.pojo.UserMsg">
+                select * from usermsg where uid = #{uid};
+        </select>
+
+        <update id="updateUserMsg" parameterType="com.dagu.pojo.UserMsg">
+                update `usermsg`
+                <trim prefix="set" suffixOverrides=",">
+                        <if test="userMsg.name!=null">`name`=#{userMsg.name},</if>
+                        <if test="userMsg.sex!=null">sex=#{userMsg.sex},</if>
+                        <if test="userMsg.birthday!=null">birthday=#{userMsg.birthday},</if>
+                        <if test="userMsg.education!=null">education=#{userMsg.education},</if>
+                        <if test="userMsg.job!=null">job=#{userMsg.job},</if>
+                </trim>
+                WHERE uid=#{userMsg.uid}
+        </update>
+</mapper>

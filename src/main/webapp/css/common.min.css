@@ -1,0 +1,67 @@
+*{
+	margin:0;
+	padding:0;
+	font-family:Arial,Microsoft YaHei,SimSun;
+}
+body{
+	background-color:#fff;
+}
+a{
+	outline:0;
+	text-decoration:none;
+	color:#888 ;
+}
+
+li{
+	list-style:none
+}
+
+
+
+
+
+.header_cart_easy{width:25px;height:25px;background:url(../images/imgbutton0.png) no-repeat -658px -68px}
+.headersearch_style0_style0{width:40%;float:left}
+.header_style0_style0 .header_logo_gox{width:1190px;height:90px;margin:0 auto}
+
+.header_style0_style0 .header_logo{width:366px;float:left;padding-top:20px}
+
+
+.header_ad{width:305px;height:50px;overflow:hidden;padding-left:30px;padding-top:20px}
+.header_ad li{float:left}
+.header_ad .ad_phone_photo{width:30px;height:24px;margin-right:7px;padding-top:11px;margin-left:5px}
+.header_ad .ad_explain{width:70px;overflow:hidden;font-size:14px;line-height:30px;color:#999;padding-top:20px}
+.header_ad .ad_phone{width:260px;line-height:30px;font-size:20px;color:#333;padding-top:8px}
+.header_ad .ad_photo_box{width:100%;height:100%}
+.header_ad .ad_photo{width:100%;height:100%}
+.header_ad .ad_photo img{width:100%;height:100%}
+.ad_text{display:block;color:#444545;font-size:16px;line-height:30px;margin-top:7px}
+.ad_text a{color:#444545;font-size:18px;line-height:30px;white-space:nowrap}
+
+.headersearch_style0_style1{width:40%;float:left}.headersearch_style0_style1 .header_search{width:100%;margin-top:2px}
+.headersearch_style0_style1 .header_search .header_hot li{float:left}
+.headersearch_style0_style1 .header_search .header_hot a{color:#999;padding:0 5px 0 5px;line-height:22px;font-size:12px}
+.headersearch_style0_style1 .header_search .header_hot a:hover{color:#c30000;text-decoration:underline}
+.headersearch_style0_style1 .header_search .header_hot input{height:15px;padding-top:1px}
+.headersearch_style0_style1 .header_search .header_search_input{width:450px;height:32px;padding:2px;margin-top:20px}
+.headersearch_style0_style1 .header_search_InputBox{width:310px;height:32px;background:#fff;padding:0 5px;float:left}
+.headersearch_style0_style1 .header_search_InputBox input{width:100%;height:32px;border:0;color:#999}
+.headersearch_style0_style1 .header_search_Button{width:67px;height:32px;text-align:center;line-height:32px;color:#fff;float:left;font-size:16px;cursor:pointer}
+.headersearch_style0_style1 .header_search .search_key_content{width:450px;height:22px;overflow:hidden;font-size:12px}
+.headersearch_style0_style1 .header_search .search_key_content .search_key_content_title{line-height:22px;color:#999;float:left;font-size:12px}
+.headersearch_style0_style1 .header_search .new_search_key{width:60px;height:23px;float:left;cursor:text}
+
+.headersearch_style0_style1 .header_search .new_search_key input{width:60px;height:15px;float:left;padding-top:1px}
+.headersearch_style0_style2 .header_search .header_search_input{width:450px;height:32px;padding:2px}
+.header_navbox{width:100%;min-width:1260px;margin:0 auto;height:40px}
+.header_navbox .header_nav{width:1190px;height:40px;margin:0 auto;position:relative}
+.header_navbox .header_nav .header_sort{width:186px;float:left;font-size:16px;color:white;line-height:40px;position:relative;z-index:10;cursor:default;font-weight:normal}
+.header_navbox .header_nav .header_sort span{padding-left:16px;font-size:16px;font-weight:normal;color:#fff}
+.header_navbox .header_nav .header_sort .header_button_b{position:absolute;top:14px;left:162px}
+
+.header_navbox .header_nav .header_sortnav{width:820px;float:left;height:40px;}
+.header_navbox .header_nav .header_sortnav li{float:left;height:auto}
+.header_navbox .header_nav .header_sortnav a{color:white;line-height:40px;padding:0 15px 0 15px;font-size:15px;height:40px;display:block;float:left}
+.header_navbox .header_nav .header_sortnav .Checked{line-height:40px;padding:0 15px;font-size:15px;height:39px;display:block;float:left}
+.header_navbox .header_nav .page_home{float:left;height:39px;line-height:39px;padding:10px 0}
+.header_navbox .header_nav .page_home em{color:white;font-size:14px;border-right:1px solid #790000;height:39px;padding:0 20px 0 15px;cursor:pointer}

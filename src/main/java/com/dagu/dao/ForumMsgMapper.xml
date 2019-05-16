@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.ForumMsgDao">
+
+        <select id="getUnreadForumMsgTotalRows" parameterType="int" resultType="int">
+                select count(*) from forummsg where (`to`= #{id} or `to` = 0);
+        </select>
+
+        <select id="getUnreadForumMsgsByid" parameterType="int" resultType="com.dagu.pojo.ForumMsg">
+                select * from forummsg where (`to`= #{id} or `to` = 0) order by sendtime desc limit #{pageStartRow},#{pageRecorders}
+        </select>
+
+        <update id="updateIsreadById" parameterType="int" >
+                update forummsg set isread = 1 where id = #{id}
+        </update>
+
+        <insert id="addForumMsg" parameterType="com.dagu.pojo.ForumMsg" >
+                insert into forummsg (id,title,msg,`to`,sendtime,isread) value (default ,#{forumMsg.title},#{forumMsg.msg},#{forumMsg.to},now(),0);
+        </insert>
+</mapper>

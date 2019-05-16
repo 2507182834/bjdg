@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.VerificationDao">
+
+        <insert id="AddVerification" parameterType="com.dagu.pojo.Verification">
+                insert into `verification` (id, target, verification, `type`, tips, sendtime) value(
+                                <choose>
+                                        <when test="verification.id != null and verification.id !=''">
+                                                #{verification.id},
+                                        </when>
+                                        <otherwise>
+                                                default ,
+                                        </otherwise>
+                                </choose>
+                                <choose>
+                                        <when test="true">
+                                                #{verification.target},
+                                        </when>
+                                        <otherwise>
+                                                #{verification.target},
+                                        </otherwise>
+                                </choose>
+                                <choose>
+                                        <when test="verification.verification != null and verification.verification !=''">
+                                                #{verification.verification},
+                                        </when>
+                                        <otherwise>
+                                                null ,
+                                        </otherwise>
+                                </choose>
+                                <choose>
+                                        <when test="verification.type != null and verification.type !=''">
+                                                #{verification.type},
+                                        </when>
+                                        <otherwise>
+                                                null ,
+                                        </otherwise>
+                                </choose>
+                                <choose>
+                                        <when test="verification.tips != null and verification.tips !=''">
+                                                #{verification.tips},
+                                        </when>
+                                        <otherwise>
+                                                null ,
+                                        </otherwise>
+                                </choose>
+                                <choose>
+                                        <when test="verification.sendtime != null and verification.sendtime !=''">
+                                                #{verification.sendtime},
+                                        </when>
+                                        <otherwise>
+                                                default );
+                                        </otherwise>
+                                </choose>
+        </insert>
+
+    <select id="selVerification" parameterType="com.dagu.pojo.Verification" resultType="com.dagu.pojo.Verification">
+        SELECT * from verification
+        <where>
+            <if test="verification.id!=0">
+                and id = #{verification.id}
+            </if>
+            <if test="verification.target!=0">
+                and target = #{verification.target}
+            </if>
+            <if test="verification.verification!=null">
+                and verification = #{verification.verification}
+            </if>
+            <if test="verification.type!=null">
+                and type = #{verification.type}
+            </if>
+            <if test="verification.tips!=null">
+                and tips = #{verification.tips}
+            </if>
+            <if test="verification.sendtime!=null">
+                and sendtime = #{verification.sendtime}
+            </if>
+        </where>
+    </select>
+
+    <delete id="delVerification" parameterType="com.dagu.pojo.Verification">
+        delete from verification
+        <where>
+            <if test="verification.id!=0">
+                and id = #{verification.id}
+            </if>
+            <if test="verification.target!=0">
+                and target = #{verification.target}
+            </if>
+            <if test="verification.verification!=null">
+                and verification = #{verification.verification}
+            </if>
+            <if test="verification.type!=null">
+                and type = #{verification.type}
+            </if>
+            <if test="verification.tips!=null">
+                and tips = #{verification.tips}
+            </if>
+            <if test="verification.sendtime!=null">
+                and sendtime = #{verification.sendtime}
+            </if>
+        </where>
+    </delete>
+    
+    <delete id="delOvertimeVerification" parameterType="java.util.Date">
+        delete from verification where <![CDATA[ sendtime < #{time} ]]>;
+    </delete>
+
+</mapper>

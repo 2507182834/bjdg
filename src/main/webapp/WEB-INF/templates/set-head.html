@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>百佳大谷 | -设置头像</title>
+    <link rel="icon" href="imgs/favicon.ico" type="img/x-ico"/>
+    <link rel="stylesheet" rev="stylesheet" href="css/body.css" type="text/css"/>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/mycommon.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/common.min.css" rel="stylesheet" type="text/css">
+    <link href="css/major_maincolor.css" rel="stylesheet" type="text/css" css_name="css_major">
+    <link href="css/set-head.css" rel="stylesheet" type="text/css">
+
+    <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://img9.tongzhuo100.com/js/jquery.form.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/clip-image.js"></script>
+    <script src="js/set-head.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+    <!-- 用户登陆信息 -->
+    <div style="background: #000000">
+        <div class="login_button" id="login_button">
+            <div>
+                <ul>
+                    <li><a href="" id="login">登录</a></li>
+                    <li><a href="" id="register">注册</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="user_info" id="user_info">
+            <div>
+                <a class="to-index" href="" id="toIndex">首页</a>
+                <ul class="user-dropdown dropdown">
+                    <li>
+                        <a href="#" id="user_page"></a>
+                        <ul class="dropdown-menu user-dropdown-menu">
+                            <li><a id="userMsg">个人空间</a></li>
+                            <li><a id="accountMsg">账户信息</a></li>
+                            <li class="divider"></li>
+                            <li><a id="logout">退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 头部展示 -->
+
+    <div id="crop_image">
+        <div id="crop_image_top">
+            <h4 id="set-accountmsg"></>账户信息</h4>
+            <h4 id="set-personalmsg">个人信息</h4>
+            <h4 id="title">设置头像</h4>
+            <h4 id="myAuthority">我的权限</h4>
+            <!-- <a>X</a> -->
+        </div>
+
+        <div id="crop_image_content">
+            <%-- 裁剪部分 --%>
+            <div id="cropBox">
+                <img id="cropimg1" alt="" src="imgs/test.jpg">
+                <img id="cropimg2" alt="" src="imgs/test.jpg">
+                <%-- 裁剪框 --%>
+                <div id="mainBox">
+                    <div id="left-up" class="minBox left-up"></div>
+                    <div id="up" class="minBox up"></div>
+                    <div id="right-up" class="minBox right-up"></div>
+                    <div id="left" class="minBox left"></div>
+                    <div id="right" class="minBox right"></div>
+                    <div id="left-down" class="minBox left-down"></div>
+                    <div id="down" class="minBox down"></div>
+                    <div id="right-down" class="minBox right-down"></div>
+                </div>
+            </div>
+            <%-- 预览部分 --%>
+            <div id="preview">
+                <img id="cropimg3" alt="" src="imgs/test.jpg">
+            </div>
+        </div>
+
+        <div id="crop_image_bottom">
+            <input class="btn" type="button" value="取消">
+            <input id="submitBtn" class="btn" type="button" value="确定" onclick="saveCropImage()">
+        </div>
+    </div>
+
+    <!-- 上传图片表单 -->
+    <form id="uploadForm" enctype='multipart/form-data'>
+        <div id="uploadImage">
+            <img id="cropimg4" alt="" src="imgs/test.jpg">
+            <a href="javascript:;" class="addImage">
+                <span>上传图片</span>
+                <input id="imgFile" type="file" name="imgFile" src="imgs/test.jpg">
+            </a>
+        </div>
+    </form>
+
+    <div class="footer_copyright" id="store_footer">
+        <div style="height: 890px; width: 100%;"></div>
+        <div id="footer_content">
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="outline:none;text-decoration:none;color:#666666;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"> </span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';outline:none;line-height:2;font-size:12px;">Copyright © 2004&nbsp;</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;">
+					<span style="margin:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;font-size:12px;">&nbsp;中山市百佳大谷电子科技有限公司</span>
+				</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">版权所有 |​ 工信部网站<a
+                        href="http://www.beian.miit.gov.cn" target="_blank">​www.beian.miit.gov.cn</a>​ |&nbsp;粤ICP备06112223号-5&nbsp;<br></span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">经营许可证 91442000769328574C | ​计算机软件著作权登记 软著登字第1348992号&nbsp;软著登字第1090245号​<br></span>
+            </p>
+
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"></span><span
+                    style="outline:none;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"><a
+                    href="http://www.zhuyun.cn/" target="_blank"
+                    style="outline:none;text-decoration:none;color:#2A586F;margin:0px;padding:0px;"></a></span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

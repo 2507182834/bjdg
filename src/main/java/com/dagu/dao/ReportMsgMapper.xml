@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dagu.dao.ReportMsgDao">
+	<insert id="addReportMsg" parameterType="com.dagu.pojo.ReportMsg" >
+		insert into reportmsg (id,target,`type`,`from`,msg,reporttime) value (default ,#{reportMsg.target},#{reportMsg.type},#{reportMsg.from},#{reportMsg.msg},now());
+	</insert>
+
+	<select id="getAllReportMsg" resultType="com.dagu.pojo.ReportMsg">
+		select * from reportmsg order by reporttime desc;
+	</select>
+	<update id="hasSolveReportMsg" parameterType="int" >
+		update reportmsg set isread = 1 where id = #{id};
+	</update>
+</mapper>

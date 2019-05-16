@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>百佳大谷 | -账户信息</title>
+    <link rel="icon" href="imgs/favicon.ico" type="img/x-ico"/>
+    <link rel="stylesheet" rev="stylesheet" href="css/body.css" type="text/css"/>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/mycommon.css" rel="stylesheet" type="text/css">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <link href="css/common.min.css" rel="stylesheet" type="text/css">
+    <link href="css/major_maincolor.css" rel="stylesheet" type="text/css" css_name="css_major">
+    <link href="css/set-head.css" rel="stylesheet" type="text/css">
+    <link href="css/set-accountmsg.css" rel="stylesheet" type="text/css">
+
+    <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://img9.tongzhuo100.com/js/jquery.form.min.js"></script>
+    <script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/clip-image.js"></script>
+    <script src="js/set-accountmsg.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <!-- 用户登陆信息 -->
+    <div style="background: #000000">
+        <div class="login_button" id="login_button">
+            <div>
+                <ul>
+                    <li><a href="" id="login">登录</a></li>
+                    <li><a href="" id="register">注册</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="user_info" id="user_info">
+            <div>
+                <a class="to-index" href="" id="toIndex">首页</a>
+                <ul class="user-dropdown dropdown">
+                    <li>
+                        <a href="#" id="user_page"></a>
+                        <ul class="dropdown-menu user-dropdown-menu">
+                            <li><a id="userMsg">个人空间</a></li>
+                            <li><a id="accountMsg">账户信息</a></li>
+                            <li class="divider"></li>
+                            <li><a id="logout">退出登录</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 头部展示 -->
+
+    <div id="crop_image">
+        <div id="crop_image_top">
+            <h4 id="title">账户信息</h4>
+            <h4 id="set-personalmsg">个人信息</h4>
+            <h4 id="set-head">设置头像</h4>
+            <h4 id="myAuthority">我的权限</h4>
+            <!-- <a>X</a> -->
+        </div>
+
+        <div class="box">
+            <div style="width: 100%; height: 1px;"></div>
+            <div class="content-box">
+                <!--/*@thymesVar id="session.user" type="com.dagu.pojo.User"*/-->
+                <div class="set-box">
+                    <span class="set-span">用户名:</span>
+                    <span th:text="${session.user.getName()}" class="text-span" id="uname-span"></span>
+                    <input class="set-input" th:value="${session.user.getName()}" id="uname-input"
+                           style="display: none"/>
+                    <img src="imgs/edit.jpg" class="edit-img" id="uname-edit-img">
+                </div>
+                <div class="set-box" id="password-box">
+                    <span class="set-span">密码:</span><span class="text-span">******</span>
+                    <img src="imgs/edit.jpg" class="edit-img" id="password-edit-img">
+                </div>
+                <div id="password-edit-box" style="display: none">
+                    <div class="set-box">
+                        <span class="set-span">旧密码:</span>
+                        <input class="set-input" type="password" style="display: inline-block" id="old-password-input"/>
+                    </div>
+                    <div class="set-box">
+                        <span class="set-span">新密码:</span>
+                        <input class="set-input" style="display: inline-block" id="new-password-input"/>
+                        <img src="imgs/close.jpg" class="edit-img" id="new-password-img">
+                    </div>
+                </div>
+                <div class="set-box" id="email-box">
+                    <span class="set-span">邮箱:</span><span
+                        th:text="${session.user.getEmail() }==null?'未绑定' : ${session.user.getEmail() }"
+                        class="text-span"></span>
+                    <img src="imgs/edit.jpg" class="edit-img" id="email-img">
+                </div>
+                <div id="email-edit-box" style="display: none">
+                    <div class="set-box">
+                        <span class="set-span">新邮箱:</span>
+                        <input class="set-input" style="display: inline-block" id="new-email-input"/>
+                        <img src="imgs/close.jpg" class="edit-img" id="new-email-img">
+                    </div>
+                    <div class="set-box" id="verification-box">
+                        <span class="set-span">验证码:</span>
+                        <input class="set-input" style="display: inline-block" id="verification-input"/>
+                        <img src="getVerificationCode" class="verification-img" id="verification-img">
+                        <button class="verification-button" id="verification-button">获取验证码</button>
+                    </div>
+                    <div class="set-box" id="email-verification-box" style="display: none">
+                        <span class="set-span">收到的验证码:</span>
+                        <input class="set-input" style="display: inline-block" id="email-verification-input"/>
+                    </div>
+                </div>
+                <div class="set-box" id="phone-box">
+                    <span class="set-span">手机:</span>
+                    <span th:text="${session.user.getPhone() }==null?'未绑定' : ${session.user.getPhone() }"
+                          class="text-span"></span>
+                    <img src="imgs/edit.jpg" class="edit-img" id="phone-edit-img">
+                </div>
+                <div id="phone-edit-box" style="display: none">
+                    <div class="set-box">
+                        <span class="set-span">新号码:</span>
+                        <input class="set-input" style="display: inline-block" id="new-phone-input"/>
+                        <img src="imgs/close.jpg" class="edit-img" id="new-phone-img">
+                    </div>
+                    <div class="set-box" id="xx-verification-box">
+                        <span class="set-span">验证码:</span>
+                        <input class="set-input" style="display: inline-block" id="xx-verification-input"/>
+                        <img src="getVerificationCode" class="verification-img" id="xx-verification-img">
+                        <button class="verification-button" id="xx-verification-button">获取验证码</button>
+                    </div>
+                    <div class="set-box" id="phone-verification-box" style="display: none">
+                        <span class="set-span">收到的验证码:</span>
+                        <input class="set-input" style="display: inline-block" id="phone-verification-input"/>
+                    </div>
+                </div>
+            </div>
+            <button class="submit-button" id="submit-button">保存</button>
+        </div>
+    </div>
+
+    <div class="footer_copyright" id="store_footer">
+        <div id="footer_content">
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="outline:none;text-decoration:none;color:#666666;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"> </span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';outline:none;line-height:2;font-size:12px;">Copyright © 2004&nbsp;</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;">
+					<span style="margin:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;font-size:12px;">&nbsp;中山市百佳大谷电子科技有限公司</span>
+				</span>
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">版权所有 |​ 工信部网站<a
+                        href="http://www.beian.miit.gov.cn" target="_blank">www.beian.miit.gov.cn</a>​ |&nbsp;粤ICP备06112223号-5&nbsp;<br></span>
+            </p>
+            <p align="center"
+               style="margin-top:0px;margin-bottom:0px;padding:0px;font-family:'Microsoft YaHei', SimSun, Arial;-webkit-text-size-adjust:none;line-height:normal;white-space:normal;color:#666666;background-color:#FFFFFF;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;font-size:12px;">经营许可证 91442000769328574C | ​计算机软件著作权登记 软著登字第1348992号&nbsp;软著登字第1090245号​<br></span>
+            </p>
+
+            <p align="center"
+               style="white-space:normal;background-color:#FFFFFF;margin-top:0px;margin-bottom:0px;color:#666666;font-family:'Microsoft YaHei', SimSun, Arial;padding:0px;">
+                <span style="margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"></span><span
+                    style="outline:none;margin:0px;padding:0px;font-family:'Microsoft YaHei';line-height:2;"><a
+                    href="http://www.zhuyun.cn/" target="_blank"
+                    style="outline:none;text-decoration:none;color:#2A586F;margin:0px;padding:0px;"></a></span></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
